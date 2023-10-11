@@ -1,17 +1,17 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: project03-dep
+  name: project04-dep
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: project03
+      app: project04
   template:
     metadata:
       labels:
-        app: project03
+        app: project04
     spec:
       containers:
-        - name: project03
-          image: fajouianas/devops-with-kubernetes:1.05
+        - name: project04
+          image: fajouianas/devops-with-kubernetes:1.06
