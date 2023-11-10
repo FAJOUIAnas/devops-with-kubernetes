@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: project05-dep
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: project05
+  template:
+    metadata:
+      labels:
+        app: project05
+    spec:
+      containers:
+        - name: project05
+          image: ajouianas/devops-with-kubernetes:1.08
