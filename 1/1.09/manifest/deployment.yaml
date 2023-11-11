@@ -1,17 +1,17 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: project05-dep
+  name: ping-pong-dep
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: project05
+      app: ping-pong
   template:
     metadata:
       labels:
-        app: project05
+        app: ping-pong
     spec:
       containers:
-        - name: project05
-          image: fajouianas/devops-with-kubernetes:1.08
+        - name: ping-pong
+          image: fajouianas/devops-with-kubernetes:1.09
