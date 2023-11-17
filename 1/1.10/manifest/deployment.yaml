@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: write-read-dep
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: write-read
+  template:
+    metadata:
+      labels:
+        app: write-read
+    spec:
+      volumes:
+        - name: log-file
+      containers:
+        - name: writer
+          image: fajouianas/devops-with-kubernetes:1.101
+          volumeMounts:
+          - name: log-file
+            mountPath: /usr/src/app/files
+          imagePullPolicy: Always
+        - name: reader
+          image: fajouianas/devops-with-kubernetes:1.102
+          volumeMounts:
+          - name: log-file
+            mountPath: /usr/src/app/files
+          imagePullPolicy: Always
