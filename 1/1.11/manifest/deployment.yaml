@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ping-log-dep
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ping-log
+  template:
+    metadata:
+      labels:
+        app: ping-log
+    spec:
+      volumes:
+        - name: shared-file
+          persistentVolumeClaim:
+            claimName: ping-log-claim
+      containers:
+        - name: ping-pong
+          image: fajouianas/devops-with-kubernetes:1.111
+          volumeMounts:
+          - name: shared-file
+            mountPath: /usr/src/app/files
+        - name: log-output
+          image: fajouianas/devops-with-kubernetes:1.112
+          volumeMounts:
+          - name: shared-file
+            mountPath: /usr/src/app/files
