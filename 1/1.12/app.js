@@ -6,7 +6,6 @@ const path = require("path");
 const port = 3001;
 
 const directory = path.join("files");
-// const directory = path.join(".");
 const filePath = path.join(directory, "date.txt");
 const imagePath = path.join(directory, "image.png");
 
@@ -29,7 +28,6 @@ function dateMaker(oldDate) {
 const server = http.createServer((req, res) => {
     fs.readFile(filePath, (err, content) => {
         if (err) {
-            // return err
             return res.end("Failed to read file");
         }
         var currentDate = dateMaker(new Date());
