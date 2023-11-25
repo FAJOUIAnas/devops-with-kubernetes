@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: project06-dep
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: project06
+  template:
+    metadata:
+      labels:
+        app: project06
+    spec:
+      volumes:
+        - name: cache
+          persistentVolumeClaim:
+            claimName: project06-claim
+      containers:
+        - name: project06
+          image: fajouianas/devops-with-kubernetes:1.12
+          imagePullPolicy: Always
+          volumeMounts:
+          - name: cache
+            mountPath: /usr/src/app/files

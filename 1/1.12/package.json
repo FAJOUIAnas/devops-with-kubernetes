@@ -1,0 +1,14 @@
+{
+  "name": "project",
+  "version": "0.6.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "Anas Fajoui",
+  "license": "ISC",
+  "dependencies": {
+    "request": "^2.88.2"
+  }
+}
