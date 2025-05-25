@@ -2,9 +2,9 @@
   "name": "project",
   "version": "0.1.0",
   "description": "A web server that outputs \"Server started in port NNNN\".",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "node server.js"
   },
   "author": "Anas Fajoui",
   "license": "ISC"

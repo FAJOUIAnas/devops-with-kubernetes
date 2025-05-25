@@ -6,6 +6,6 @@ COPY package* ./
 
 RUN npm ci
 
-COPY . .
+COPY . ./
 
 CMD [ "npm", "start" ]
