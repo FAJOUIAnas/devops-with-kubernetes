@@ -14,4 +14,4 @@ spec:
     spec:
       containers:
         - name: outputlogger
-          image: fajouianas/devops-with-kubernetes:1.01
+          image: fajouianas/devops-with-kubernetes:1.03
